@@ -1,5 +1,80 @@
 function to_roman (num) {
-  // your implementation code here
+  var arrOfObjConversion = [
+    {
+      number: 1,
+      roman: "I"
+    },
+    {
+      number: 4,
+      roman: "IV"
+    },
+    {
+      number: 5,
+      roman: "V"
+    },
+    {
+      number: 9,
+      roman: "IX"
+    },
+    {
+      number: 10,
+      roman: "X"
+    },
+    {
+      number: 40,
+      roman: "XL"
+    },
+    {
+      number: 50,
+      roman: "L"
+    },
+    {
+      number: 90,
+      roman: "XC"
+    },
+    {
+      number: 100,
+      roman: "C"
+    },
+    {
+      number: 400,
+      roman: "CD"
+    },
+    {
+      number: 500,
+      roman: "D"
+    },
+    {
+      number: 900,
+      roman: "CM"
+    },
+    {
+      number: 1000,
+      roman: "M"
+    }
+  ];
+  var i = 12;
+  var tempoRomanConversion = '';
+  var tempoNumberSum = 0;
+
+  while (num !== 0) {
+    var arrayAccessNumber = arrOfObjConversion[i].number;
+    var arrayAccessRoman = arrOfObjConversion[i].roman;
+    var inspector = num - arrayAccessNumber;
+    // console.log(inspector);
+    if (inspector >= 0) {
+      num -= arrayAccessNumber;
+      tempoRomanConversion += arrayAccessRoman;
+      // console.log(tempoRomanConversion);
+      // console.log(tempoNumberSum);
+    } else if (inspector < 0) {
+      // console.log("keluar");
+      i --;
+      // console.log(arrayAccessNumber);
+      // console.log(arrayAccessRoman);
+    }
+  }
+  return tempoRomanConversion;
 }
 
 // Drive code
