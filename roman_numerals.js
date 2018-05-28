@@ -1,11 +1,21 @@
 function to_roman (num) {
-  // your implementation code here
+var specialRoman = {M: 1000, CM: 900 , D: 500, CD: 400, C: 100, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1}
+var roman = ''
+
+for(var keys in specialRoman){
+  while(num >= specialRoman[keys]){
+    roman += keys
+
+    num = num - specialRoman[keys]
+  }
+}
+return roman;
 }
 
 // Drive code
-console.log('My totally sweet testing script for new roman\n')
-console.log('input | expected | actual')
-console.log('——————|——————————|———————')
+//console.log('My totally sweet testing script for new roman\n')
+//console.log('input | expected | actual')
+//console.log('——————|——————————|———————')
 console.log('4     | IV       | ', to_roman(4))
 console.log('9     | IX       | ', to_roman(9))
 console.log('13    | XIII     | ', to_roman(13))
