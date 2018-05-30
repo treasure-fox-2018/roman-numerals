@@ -16,7 +16,6 @@ function to_roman (num) {
     M: 1000,
   }
   
-
   let keys = Object.keys(numObj)
   let hasil = ''
   while (num >= 1) { 
@@ -30,7 +29,6 @@ function to_roman (num) {
       } 
     }
   }
-
   return hasil
 }
 
